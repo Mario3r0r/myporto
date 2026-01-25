@@ -1,3 +1,123 @@
+/* --- 1. RESET & DASAR --- */
+* {
+    margin: 0; /* Menghapus jarak bawaan browser agar tidak ada celah aneh */
+    padding: 0; /* Menghapus padding bawaan browser */
+    box-sizing: border-box; /* Menghitung padding & border dalam total lebar elemen */
+}
+
 body {
-  background-color: rgb(255, 165, 0); /* Ganti dengan nilai RGB */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font modern yang bersih */
+    line-height: 1.6; /* Memberi ruang antar baris teks agar enak dibaca */
+    color: #333; /* Warna teks utama abu gelap (tidak hitam pekat agar mata tidak lelah) */
+    background-color: #f4f7f6; /* Warna latar belakang sangat terang */
+}
+
+/* --- 2. NAVIGASI (Sticky Navbar) --- */
+nav {
+    display: flex; /* Mengaktifkan mode flexbox */
+    justify-content: space-between; /* Nama brand di kiri, menu di kanan */
+    align-items: center; /* Menyejajarkan item secara vertikal di tengah */
+    padding: 1rem 10%; /* Jarak atas-bawah 1rem, kiri-kanan 10% agar rapi di tengah */
+    background-color: #1a2a6c; /* Warna Biru Gelap sesuai permintaanmu */
+    color: white; /* Warna teks navigasi putih */
+    position: sticky; /* Membuat navigasi menempel saat scroll */
+    top: 0; /* Menentukan posisi tempel di paling atas */
+    z-index: 1000; /* Memastikan navigasi selalu berada di atas elemen lain */
+}
+
+nav ul {
+    display: flex; /* Membuat daftar menu berjajar ke samping */
+    list-style: none; /* Menghilangkan titik-titik (bullet) pada list */
+}
+
+nav ul li {
+    margin-left: 20px; /* Jarak antar menu navigasi */
+}
+
+nav a {
+    color: white; /* Warna link putih */
+    text-decoration: none; /* Menghilangkan garis bawah pada link */
+    font-weight: 500; /* Ketebalan teks medium */
+    transition: color 0.3s; /* Efek halus saat warna berubah */
+}
+
+nav a:hover {
+    color: #00d2ff; /* Warna berubah jadi biru muda saat kursor di atasnya */
+}
+
+/* --- 3. HERO SECTION --- */
+.hero {
+    height: 80vh; /* Tinggi hero 80% dari tinggi layar laptop */
+    display: flex; /* Flexbox untuk menaruh konten di tengah */
+    flex-direction: column; /* Konten disusun ke bawah */
+    justify-content: center; /* Konten di tengah secara vertikal */
+    align-items: center; /* Konten di tengah secara horizontal */
+    text-align: center; /* Teks rata tengah */
+    background: linear-gradient(rgba(26, 42, 108, 0.8), rgba(26, 42, 108, 0.8)), url('hero-bg.jpg'); /* Background biru transparan di atas gambar */
+    background-size: cover; /* Gambar menutupi seluruh area hero */
+    color: white; /* Warna teks putih */
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 3rem; /* Ukuran font judul yang besar */
+    margin-bottom: 1rem; /* Jarak bawah judul */
+}
+
+/* --- 4. ABOUT SECTION --- */
+.about {
+    padding: 80px 15%; /* Jarak lega agar fokus pada teks */
+    text-align: center;
+    background-color: white;
+}
+
+/* --- 5. PROYEK (CSS GRID) --- */
+.proyek {
+    padding: 80px 10%;
+    background-color: #f4f7f6;
+}
+
+.proyek-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.grid-container {
+    display: grid; /* Mengaktifkan CSS Grid */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grid otomatis menyesuaikan jumlah kolom */
+    gap: 20px; /* Jarak antar kartu proyek */
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px; /* Sudut kartu yang melengkung modern */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Efek bayangan halus agar kartu terlihat 'mengambang' */
+    transition: transform 0.3s; /* Efek transisi untuk animasi hover */
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Kartu naik sedikit saat disentuh kursor */
+}
+
+/* --- 6. MEDSOS & FOOTER --- */
+.medsos {
+    padding: 40px;
+    text-align: center;
+    background-color: white;
+}
+
+.medsos a {
+    margin: 0 10px;
+    font-size: 1.5rem;
+    color: #1a2a6c;
+    text-decoration: none;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #1a2a6c;
+    color: white;
+    font-size: 0.9rem;
 }
