@@ -1,221 +1,217 @@
-/* --- 1. RESET & DASAR --- */
+/* Import Font Profesional */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Oswald:wght@500;700&display=swap');
+
+:root {
+    --gold: #d4af37;
+    --dark-blue: #0a192f;
+    --industrial-gray: #2d2d2d;
+    --light-gray: #f4f4f4;
+    --white: #ffffff;
+}
+
 * {
     margin: 0;
-    /* Menghapus jarak bawaan browser di luar elemen */
     padding: 0;
-    /* Menghapus jarak bawaan browser di dalam elemen */
     box-sizing: border-box;
-    /* Memastikan padding tidak menambah lebar total elemen */
-    font-family: 'Segoe UI', sans-serif;
-    /* Menggunakan font yang bersih dan modern */
+    scroll-behavior: smooth; /* Efek smooth scroll */
 }
 
 body {
-    background-color: #f4f7f6;
-    /* Warna latar belakang abu-abu sangat muda agar mata tidak lelah */
-    color: #333;
-    /* Warna teks utama (abu-abu gelap, hampir hitam) */
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--white);
+    color: var(--industrial-gray);
     line-height: 1.6;
-    /* Mengatur jarak antar baris teks agar nyaman dibaca */
+    /* Custom Cursor: Pickaxe */
+    cursor: url('https://img.icons8.com/ios-filled/32/d4af37/pickaxe.png'), auto;
 }
 
-/* --- 2. NAVIGASI --- */
-nav {
-    background-color: #001f3f;
-    /* Warna Biru Gelap (Navy) */
-    padding: 1rem 5%;
-    /* Jarak dalam: 1rem atas-bawah, 5% kiri-kanan */
-    display: flex;
-    /* Mengaktifkan mode Flexbox */
-    justify-content: space-between;
-    /* Logo di kiri, menu di kanan */
-    align-items: center;
-    /* Menyejajarkan item secara vertikal di tengah */
-    position: sticky;
-    /* Membuat navigasi tetap di atas saat di-scroll */
+/* --- Navigasi --- */
+header {
+    background-color: var(--dark-blue);
+    padding: 1rem 10%;
+    position: fixed;
+    width: 100%;
     top: 0;
     z-index: 1000;
-    /* Memastikan navigasi selalu berada di lapisan paling atas */
+    border-bottom: 4px solid var(--gold);
 }
 
-nav .logo {
-    color: white;
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--white);
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 800;
+    font-family: 'Oswald', sans-serif;
+}
+
+.logo span {
+    color: var(--gold);
 }
 
 nav ul {
     display: flex;
-    /* Membuat daftar menu berjejer ke samping */
     list-style: none;
-    /* Menghilangkan titik-titik (bullet) pada list */
-}
-
-nav ul li {
-    margin-left: 20px;
-    /* Memberi jarak antar menu */
 }
 
 nav ul li a {
-    color: white;
+    color: var(--white);
     text-decoration: none;
-    /* Menghilangkan garis bawah pada link */
+    margin-left: 2rem;
+    font-weight: 600;
     transition: 0.3s;
-    /* Efek halus saat warna berubah */
 }
 
 nav ul li a:hover {
-    color: #0074D9;
-    /* Berubah menjadi biru terang saat kursor menyentuh link */
+    color: var(--gold);
 }
 
-/* --- 3. HERO SECTION --- */
+/* --- Hero Section --- */
 .hero {
-    height: 80vh;
-    /* Tinggi hero 80% dari tinggi layar */
-    background-color: #001f3f;
-    color: white;
+    height: 100vh;
+    /* Menggunakan gambar pertambangan Freeport Indonesia */
+    background: linear-gradient(rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 0.7)), 
+                url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Grasberg_Mine_heavy_equipment.jpg/1280px-Grasberg_Mine_heavy_equipment.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    color: var(--white);
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.hero-content h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4rem;
+    border-left: 8px solid var(--gold);
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.btn-hero {
+    display: inline-block;
+    background-color: var(--gold);
+    color: var(--dark-blue);
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 1.5rem;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.btn-hero:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Efek Timbul Foto Profil */
+.hero-logo img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border: 5px solid var(--gold);
+    border-radius: 20px;
+    box-shadow: 10px 10px 0px var(--gold);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.hero-logo img:hover {
+    transform: scale(1.05) rotate(-2deg);
+    box-shadow: 20px 20px 30px rgba(0,0,0,0.5);
+}
+
+/* --- Container Umum --- */
+.container {
+    padding: 100px 10%;
+}
+
+h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--dark-blue);
+    text-transform: uppercase;
+}
+
+/* --- Section About --- */
+.about {
+    background-color: var(--light-gray);
+}
+
+/* --- Section Proyek (Efek Timbul/Card) --- */
+.proyek-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.proyek-card {
+    background: var(--white);
+    border-bottom: 5px solid var(--gold);
+    text-decoration: none;
+    color: inherit;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.proyek-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.proyek-info {
+    padding: 1.5rem;
+}
+
+/* Efek Timbul saat Hover Card */
+.proyek-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* --- Media Sosial --- */
+.medsos-list {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.medsos_item {
     display: flex;
     flex-direction: column;
-    /* Menyusun teks secara vertikal */
-    justify-content: center;
-    /* Menaruh teks di tengah secara vertikal */
     align-items: center;
-    /* Menaruh teks di tengah secara horizontal */
-    text-align: center;
-    padding: 0 20px;
+    text-decoration: none;
+    color: var(--dark-blue);
+    font-weight: bold;
 }
 
-.hero h1 {
-    font-size: 3rem;
-    /* Ukuran judul besar */
-    margin-bottom: 10px;
+.medsos_item img {
+    width: 50px;
+    transition: 0.3s;
 }
 
-/* --- 4. ABOUT SECTION --- */
-.about {
-    padding: 80px 10%;
-    /* Jarak luas agar konten tidak terasa sesak */
-    text-align: center;
-    background-color: white;
+.medsos_item:hover img {
+    transform: scale(1.2);
 }
 
-/* --- 5. PROYEK (GRID SYSTEM) --- */
-.proyek {
-    padding: 80px 10%;
-    background-color: #f4f7f6;
-}
-
-.proyek h2 {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.grid-container {
-    display: grid;
-    /* Mengaktifkan sistem Grid */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    /* Kolom otomatis menyesuaikan layar */
-    gap: 20px;
-    /* Jarak antar kartu proyek */
-}
-
-
-
-.card {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    /* Membuat sudut kartu melengkung */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Memberi bayangan halus agar terlihat timbul */
-    transition: transform 0.3s;
-    /* Efek transisi untuk animasi */
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    /* Kartu sedikit naik saat disentuh kursor */
-}
-
-/* --- 6. MEDSOS & FOOTER --- */
-.medsos {
-    padding: 40px;
-    text-align: center;
-    background-color: white;
-}
-
+/* --- Footer --- */
 footer {
-    background-color: #001f3f;
-    color: white;
+    background-color: var(--dark-blue);
+    color: var(--white);
     text-align: center;
-    padding: 20px 0;
-    font-size: 0.9rem;
-}
-
-/* --- SECTION PROYEK --- */
-.proyek {
-    padding: 60px 10%;           /* Memberi ruang napas di atas-bawah dan samping */
-    background-color: #ffffff;    /* Warna latar belakang putih bersih */
-    text-align: center;           /* Membuat judul "Proyek Saya" berada di tengah */
-}
-
-.proyek h2 {
-    font-size: 2.5rem;            /* Ukuran font judul yang besar dan tegas */
-    color: #001f3f;               /* Warna Biru Gelap sesuai tema */
-    margin-bottom: 40px;          /* Jarak antara judul dan kumpulan kartu */
-    position: relative;           /* Untuk dekorasi garis bawah jika diinginkan */
-}
-
-/* --- GRID SYSTEM (Wadah Kartu) --- */
-.proyek-grid {
-    display: grid;                /* Mengaktifkan sistem Grid */
-    /* Membuat kolom otomatis: minimal 300px, maksimal 1 bagian dari sisa ruang (1fr) */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 30px;                    /* Jarak antar kartu proyek agar tidak menempel */
-}
-
-
-
-/* --- KARTU PROYEK (Link Wrapper) --- */
-.proyek-card {
-    background-color: #f8f9fa;    /* Warna abu-abu sangat muda untuk kartu */
-    border-radius: 12px;          /* Membuat sudut kartu tumpul/bulat */
-    overflow: hidden;             /* Memotong bagian gambar yang keluar dari border-radius */
-    text-decoration: none;        /* Menghilangkan garis bawah karena ini adalah tag <a> */
-    color: inherit;               /* Warna teks mengikuti pengaturan utama */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Bayangan lembut agar kartu terlihat "mengapung" */
-    transition: all 0.3s ease;    /* Efek halus saat kartu berinteraksi dengan kursor */
-    display: block;               /* Memastikan seluruh area kartu bisa diklik */
-}
-
-/* --- EFEK HOVER (Saat Mouse Di Atas Kartu) --- */
-.proyek-card:hover {
-    transform: translateY(-10px); /* Kartu naik sedikit ke atas */
-    box-shadow: 0 10px 25px rgba(0, 31, 63, 0.2); /* Bayangan jadi lebih tebal dan berwarna kebiruan */
-}
-
-/* --- GAMBAR PROYEK --- */
-.proyek-card img {
-    width: 100%;                  /* Gambar selalu memenuhi lebar kartu */
-    height: 200px;                /* Tinggi gambar disamakan semua */
-    object-fit: cover;            /* Gambar dipotong secara proporsional agar tidak penyok */
-    border-bottom: 3px solid #001f3f; /* Garis pembatas biru gelap di bawah gambar */
-}
-
-/* --- INFO PROYEK (Teks di Dalam Kartu) --- */
-.proyek-info {
-    padding: 20px;                /* Jarak teks ke pinggir kartu */
-    text-align: left;             /* Teks judul dan deskripsi rata kiri */
-}
-
-.proyek-info h3 {
-    margin-bottom: 10px;          /* Jarak antara Judul Proyek dan Deskripsi */
-    color: #001f3f;               /* Judul proyek berwarna Biru Gelap */
-    font-size: 1.25rem;
-}
-
-.proyek-info p {
-    color: #666;                  /* Warna deskripsi abu-abu agar lebih kontras dengan judul */
-    font-size: 0.95rem;
+    padding: 2rem;
+    border-top: 4px solid var(--gold);
 }
